@@ -67,10 +67,7 @@ class PenerbitController extends Controller
     }
 
     
-    public function show ()  
-    {
-        
-    }
+    
 
    
     public function edit(string $id)
@@ -86,14 +83,14 @@ class PenerbitController extends Controller
         
         $rules = [
             // ini rulse bagus
-            // 'kode' => 'required|max:20|min:3|unique:penerbit,kode',
+            'kode' => 'required|max:20|min:3|unique:penerbit,kode',
             // 'nama' => 'required|max:20|min:3|unique:penerbit,nama',
             // 'alamat' => 'required|max:20|min:3|unique:penerbit,alamat',
             // 'kota' => 'required|max:20|min:3|unique:penerbit,kota',
-            // 'telepon' => 'required|max:20|min:3|unique:penerbit,telepon'
+            // 'telepon' => 'required|max:20|min:3|unique:penerbit,telepon',
             
             //ini ngak 
-            'kode' => 'required|max:20|min:3',
+            // 'kode' => 'required|max:20|min:3',
             'nama' => 'required|max:20|min:3',
             'alamat' => 'required|max:20|min:3',
             'kota' => 'required|max:20|min:3',

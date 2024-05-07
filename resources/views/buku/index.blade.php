@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-6">
         {{-- @if (Auth::user()->role == 'admin') --}}
-            <a href="">
+            <a href="{{ route('buku.create')}}">
                 <button type="button" class="btn btn-warning"><i class="fa fa-plus-circle pe-2"></i>Tambah Data</button>
             </a>
         {{-- @endif --}}
@@ -48,7 +48,7 @@
                                             @php
                                                 $no = 1;
                                             @endphp
-                                            @foreach ($buku as $item)
+                                            @foreach ($data as $item)
                                             <tr>
                                                 <td>{{$no++}}</td>
                                                 <td>{{$item->kode}}</td>
@@ -58,13 +58,13 @@
                                                 <td>{{$item->stok}}</td>
                                                 <td>{{$item->penerbit->nama}}</td>
                                                 <td class="">
-                                                    <a href="">
+                                                    <a href="{{route('buku.edit',$item->id) }}">
                                                         <button class="btn btn-warning">
                                                             <i class="bi bi-pencil"></i>
                                                         </button>
                                                     </a>
-                                                    <a href="">
-                                                        <button class="btn btn-danger">
+                                                    <a href="{{route('buku.delete',$item->id) }}">
+                                                        <button class="btn btn-danger"  onclick="return confirm('are you sure')" >
                                                             <i class="bi bi-trash"></i>
                                                         </button>
                                                     </a>
